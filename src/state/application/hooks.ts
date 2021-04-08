@@ -9,9 +9,10 @@ import {
   COMPOUND_GOVERNANCE,
   AAVE_GOVERNANCE,
   POOL_TOGETHER_GOVERNANCE,
-  RADICLE_GOVERNANCE
+  RADICLE_GOVERNANCE,
+  BASED_LOANS_GOVERNANCE
 } from '../governance/reducer'
-import { uniswapClient, compoundClient, aaveClient, poolClient, radicleClient } from '../../apollo/client'
+import { uniswapClient, compoundClient, aaveClient, poolClient, radicleClient, bloClient } from '../../apollo/client'
 
 export function useBlockNumber(): number | undefined {
   const { chainId } = useActiveWeb3React()
@@ -104,6 +105,10 @@ export function useSubgraphClient() {
 
   if (activeProtocol?.id === RADICLE_GOVERNANCE.id) {
     return radicleClient
+  }
+
+  if (activeProtocol?.id === BASED_LOANS_GOVERNANCE.id) {
+    return bloClient
   }
 
   return undefined

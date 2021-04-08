@@ -14,6 +14,7 @@ import UniLogo from '../../assets/images/uni-logo.png'
 import CompLogo from '../../assets/images/compLogo.png'
 import AaveLogo from '../../assets/images/aave-logo.png'
 import PoolLogo from '../../assets/images/pooltogether-icon.png'
+import BLOLogo from '../../assets/images/blo-logo.png'
 import RadicleLogo from '../../assets/images/radicle-logo.svg'
 import { serializeToken } from '../user/hooks'
 
@@ -119,13 +120,30 @@ export const RADICLE_GOVERNANCE: GovernanceInfo = {
   emoji: '🌱'
 }
 
+export const BASED_LOANS_GOVERNANCE_ADDRESS = '0xa832ce1b31bfb0961e78350320ab4cb7f110e7e2'
+export const BASED_LOANS_ADDRESS = '0x238d82a35e69d7c10fe69a649134171c63e57522'
+const BLO = new Token(ChainId.RINKEBY, BASED_LOANS_ADDRESS, 18, 'BLO', 'Based Loans Ownership')
+
+export const BASED_LOANS_GOVERNANCE: GovernanceInfo = {
+  id: 'blo',
+  name: 'Based Loans Governance',
+  logo: BLOLogo,
+  primaryColor: '#d05066;',
+  secondaryColor: '#ecc3ca',
+  token: serializeToken(BLO),
+  governanceAddress: BASED_LOANS_GOVERNANCE_ADDRESS,
+  social: '@blo',
+  emoji: '🏆'
+}
+
 // mapping for routing
 export const SUPPORTED_PROTOCOLS: { [id: string]: GovernanceInfo } = {
   uniswap: UNISWAP_GOVERNANCE,
   compound: COMPOUND_GOVERNANCE,
   aave: AAVE_GOVERNANCE,
   pool: POOL_TOGETHER_GOVERNANCE,
-  radicle: RADICLE_GOVERNANCE
+  radicle: RADICLE_GOVERNANCE,
+  blo: BASED_LOANS_GOVERNANCE
 }
 
 export const FETCHING_INTERVAL = 50
@@ -178,6 +196,7 @@ export default createReducer(initialState, builder =>
       state.filterActive = action.payload.filterActive
     })
     .addCase(updateTopDelegates, (state, action) => {
+      console.log(action)
       state.topDelegates[action.payload.protocolID] = action.payload.topDelegates
     })
     .addCase(updateVerifiedDelegates, (state, action) => {
