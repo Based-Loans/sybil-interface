@@ -175,13 +175,13 @@ function DelegateInfo({
   const showDelegateButton = Boolean(userTokenBalance && JSBI.greaterThan(userTokenBalance.raw, BIG_INT_ZERO))
 
   // mainnet only
-  if (chainId && chainId !== ChainId.MAINNET) {
-    return (
-      <BodyWrapper>
-        <OutlineCard>Please switch to Ethereum mainnet. </OutlineCard>
-      </BodyWrapper>
-    )
-  }
+  // if (chainId && chainId !== ChainId.MAINNET) {
+  //   return (
+  //     <BodyWrapper>
+  //       <OutlineCard>Please switch to Ethereum mainnet. </OutlineCard>
+  //     </BodyWrapper>
+  //   )
+  // }
 
   return (
     <BodyWrapper>
