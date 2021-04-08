@@ -138,11 +138,11 @@ export const BASED_LOANS_GOVERNANCE: GovernanceInfo = {
 
 // mapping for routing
 export const SUPPORTED_PROTOCOLS: { [id: string]: GovernanceInfo } = {
-  uniswap: UNISWAP_GOVERNANCE,
-  compound: COMPOUND_GOVERNANCE,
-  aave: AAVE_GOVERNANCE,
-  pool: POOL_TOGETHER_GOVERNANCE,
-  radicle: RADICLE_GOVERNANCE,
+  // uniswap: UNISWAP_GOVERNANCE,
+  // compound: COMPOUND_GOVERNANCE,
+  // aave: AAVE_GOVERNANCE,
+  // pool: POOL_TOGETHER_GOVERNANCE,
+  // radicle: RADICLE_GOVERNANCE,
   blo: BASED_LOANS_GOVERNANCE
 }
 
