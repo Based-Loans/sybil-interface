@@ -161,7 +161,7 @@ function ProposalDetails({
     userAvailableVotes &&
     userAvailableVotes.greaterThan(BIG_INT_ZERO) &&
     proposalData &&
-    proposalData.status === 'active'
+    status === 'active'
 
   return (
     <BodyWrapper>
