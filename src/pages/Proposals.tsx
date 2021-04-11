@@ -27,11 +27,11 @@ export default function Proposals({
     <BodyWrapper>
       <AutoColumn gap="1rem">
         <Tabs />
-        {/* {chainId === ChainId.MAINNET ? (
+        {(true || chainId === ChainId.MAINNET) ? (
           <ProposalList allProposals={topProposals} />
         ) : (
           <OutlineCard>Please switch to Ethereum mainnet. </OutlineCard>
-        )} */}
+        )}
       </AutoColumn>
     </BodyWrapper>
   )

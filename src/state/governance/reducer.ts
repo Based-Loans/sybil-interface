@@ -196,7 +196,6 @@ export default createReducer(initialState, builder =>
       state.filterActive = action.payload.filterActive
     })
     .addCase(updateTopDelegates, (state, action) => {
-      console.log(action)
       state.topDelegates[action.payload.protocolID] = action.payload.topDelegates
     })
     .addCase(updateVerifiedDelegates, (state, action) => {

@@ -27,11 +27,11 @@ export default function Delegates({
     <BodyWrapper>
       <AutoColumn gap="1rem">
         <Tabs />
-        {/* {chainId === ChainId.MAINNET ? (
+        {(true || chainId === ChainId.MAINNET) ? (
           <DelegateList hideZero={false} />
         ) : (
           <OutlineCard>Please switch to Ethereum mainnet. </OutlineCard>
-        )} */}
+        )}
       </AutoColumn>
     </BodyWrapper>
   )
