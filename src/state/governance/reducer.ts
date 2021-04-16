@@ -120,8 +120,8 @@ export const RADICLE_GOVERNANCE: GovernanceInfo = {
   emoji: '🌱'
 }
 
-export const BASED_LOANS_GOVERNANCE_ADDRESS = '0x0acff6bacd8b517b85873b9cf0424e5134271bff'
-export const BASED_LOANS_ADDRESS = '0x251d874113015cd390d5e1528aa65bd7862642df'
+export const BASED_LOANS_GOVERNANCE_ADDRESS = '0xb7458e89579a08b2cefc3457f3a4a264c11f1700'
+export const BASED_LOANS_ADDRESS = '0x8574683ac06d4c813068987c7497c8544ec64bc2'
 const BLO = new Token(ChainId.RINKEBY, BASED_LOANS_ADDRESS, 18, 'BLO', 'Based Loans Ownership')
 
 export const BASED_LOANS_GOVERNANCE: GovernanceInfo = {
